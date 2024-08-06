@@ -1,0 +1,128 @@
+/* Base styles for desktop */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa; /* Light cyan background */
+    margin: 0;
+    padding: 0;
+}
+
+.subscribed-learners {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #b2ebf2; /* Light blue background for section */
+}
+
+/* Stats and Progress Containers */
+.stats-container,
+.progress-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+/* Stat and Progress Boxes */
+.stat-box,
+.progress-box {
+    background-color: #ffffff; /* White background for boxes */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 200px;
+    max-width: 300px;
+    text-align: center;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover Effect for Stat and Progress Boxes */
+.stat-box:hover,
+.progress-box:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    transform: scale(1.05); /* Slightly enlarge the box on hover */
+}
+
+/* Stat Box Headings */
+.stat-box h3 {
+    font-size: 2em;
+    color: #0288d1; /* Blue color for headings */
+}
+
+/* Progress Circle Styles */
+.progress-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(#13567a 0%, #b3e5fc 0%); 
+     /* Blue gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: black;
+    margin: 0 auto 10px;
+    transition: background- 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover Effect for Progress Circle */
+.progress-circle:hover {
+    background: conic-gradient(#0277bd 0%, #e1f5fe 0%); /* Darker blue gradient on hover */
+    transform: scale(1.1); /* Slightly enlarge the circle on hover */
+}
+
+/* Progress Circle Colors Based on Data Progress */
+.progress-circle[data-progress="72"] {
+    background: conic-gradient(#0288d1 0% 72%, #b3e5fc 72%); /* Dark blue to light blue */
+    color: white;
+}
+
+.progress-circle[data-progress="78"] {
+    background: conic-gradient(#0288d1 0% 78%, #b3e5fc 78%); /* Dark blue to light blue */
+    color: white;
+}
+
+.progress-circle[data-progress="84"] {
+    background: conic-gradient(#0288d1 0% 84%, #b3e5fc 84%); /* Dark blue to light blue */
+    color: white;
+}
+
+/* Media queries for tablet */
+@media (max-width: 768px) {
+    .stats-container,
+    .progress-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat-box,
+    .progress-box {
+        max-width: 80%;
+    }
+}
+
+/* Media queries for mobile */
+@media (max-width: 480px) {
+    .stats-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Adjusted to equal columns for mobile */
+        grid-gap: 20px;
+    }
+
+    .stat-box,
+    .progress-box {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    .progress-circle {
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        font-size: 1.5em;
+    }
+
+    .stat-box h3,
+    .progress-box .progress-circle {
+        font-size: 1.5em;
+    }
+}
